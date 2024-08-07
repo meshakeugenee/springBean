@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="lib" class="spring.SpringProj.Library">
+        <property name="books">
+            <list>
+                <ref bean="book1" />
+                <ref bean="book2" />
+                <ref bean="book3" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="book1" class="spring.SpringProj.Book">
+        <constructor-arg value="111" />
+        <constructor-arg value="Learn Spring" />
+    </bean>
+
+    <bean id="book2" class="spring.SpringProj.Book">
+        <constructor-arg value="222" />
+        <constructor-arg value="Learn Hibernate" />
+    </bean>
+
+    <bean id="book3" class="spring.SpringProj.Book">
+        <constructor-arg value="333" />
+        <constructor-arg value="Learn Angular" />
+    </bean>
+</beans>
